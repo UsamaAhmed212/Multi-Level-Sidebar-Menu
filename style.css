@@ -98,6 +98,7 @@ body {
     font-size: 16px;
     line-height: 24px;
 }
+
 .sidebar-menu {
     display: block;
     background-color: #fff;
@@ -116,6 +117,44 @@ body {
 .sidebar-menu.active {
     transform: translateX(272px);
 }
+
+
+
+
+
+
+.sidebar-menu-close {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 1;
+    background-color: transparent;
+}
+
+.sidebar-menu-close>span:before,
+.sidebar-menu-close>span:after {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 27px;
+    background: #ccc;
+}
+
+.sidebar-menu-close>span:before {
+    transform: rotate(45deg);
+}
+
+.sidebar-menu-close>span:after {
+    transform: rotate(-45deg);
+}
+
+
 
 .sidebar-menu ul {
     padding: 0;

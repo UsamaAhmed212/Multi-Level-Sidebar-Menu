@@ -36,4 +36,27 @@ window.addEventListener('load', function (event) {
             }
         }));
     }
+    
+    // .sidebar-menu Close  
+    const sidebar_menu_close = document.querySelector(".sidebar-menu-close");
+
+    if(sidebar_menu_close != null) {
+        sidebar_menu_close.addEventListener('click', debounce(function(e) {
+            const sidebar_menu_active = document.querySelector(".sidebar-menu.active");
+            
+            menu_toggle.classList.remove("open");
+            sidebar_menu_active.classList.remove("active");
+        }));
+    }
+    
+    // Close or Hide .sidebar-menu when Click Outside 
+    window.addEventListener('click', function(e) {
+        if ( menu_toggle.classList.contains("open") && sidebar_menu.classList.contains("active") ) {
+            if ( sidebar_menu !== e.target && !sidebar_menu.contains(e.target) ) {
+                menu_toggle.classList.remove('open');
+                const sidebar_menu_active = document.querySelector(".sidebar-menu.active");
+                sidebar_menu_active.classList.remove("active");
+            }
+        }
+    });
 });
